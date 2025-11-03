@@ -1,4 +1,242 @@
-<a href="/test/about">about</a>
-<a href="/test/contact">contact</a>
-<a href="/index.html">main</a>
-<h1>About</h1>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>소개 - MY BRAND</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .about-hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s;
+        }
+
+        .about-hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            animation: fadeInUp 0.8s 0.2s backwards;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+        }
+
+        .about-section {
+            margin-bottom: 4rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        .about-section:nth-child(1) { animation-delay: 0.2s; }
+        .about-section:nth-child(2) { animation-delay: 0.4s; }
+        .about-section:nth-child(3) { animation-delay: 0.6s; }
+
+        .about-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .about-section p {
+            line-height: 1.8;
+            color: var(--gray);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-item {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .skill-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-item .emoji {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-item p {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin: 0;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin-top: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -0.6rem;
+            top: 0.3rem;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--light);
+        }
+
+        .timeline-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .timeline-item .date {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/test/" class="logo">MY BRAND</a>
+            <ul class="nav-menu">
+                <li><a href="/test/">Home</a></li>
+                <li><a href="/test/about/" class="active">About</a></li>
+                <li><a href="/test/contact/">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="about-hero">
+        <div>
+            <h1>저를 소개합니다</h1>
+            <p>열정과 창의성으로 세상을 변화시키는 크리에이터</p>
+        </div>
+    </section>
+
+    <div class="about-content">
+        <section class="about-section">
+            <h2>Who am I?</h2>
+            <p>
+                안녕하세요! 저는 디자인과 기술의 경계에서 새로운 가치를 창출하는 것을 즐기는 크리에이터입니다. 
+                단순함 속에서 강력한 메시지를 전달하고, 사용자 경험을 최우선으로 생각하며 작업합니다.
+            </p>
+            <p>
+                작은 디테일 하나가 전체 경험을 바꿀 수 있다고 믿으며, 
+                모든 프로젝트에서 완벽을 추구합니다.
+            </p>
+        </section>
+
+        <section class="about-section">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <span class="emoji">💻</span>
+                    <p>Web Development</p>
+                </div>
+                <div class="skill-item">
+                    <span class="emoji">🎨</span>
+                    <p>UI/UX Design</p>
+                </div>
+                <div class="skill-item">
+                    <span class="emoji">📱</span>
+                    <p>Mobile Design</p>
+                </div>
+                <div class="skill-item">
+                    <span class="emoji">⚡</span>
+                    <p>Animation</p>
+                </div>
+                <div class="skill-item">
+                    <span class="emoji">🚀</span>
+                    <p>Product Strategy</p>
+                </div>
+                <div class="skill-item">
+                    <span class="emoji">🎯</span>
+                    <p>Branding</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <h2>Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Creative Director</h3>
+                    <div class="date">2023 - Present</div>
+                    <p>디지털 경험 디자인 및 브랜드 전략 수립</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Senior Designer</h3>
+                    <div class="date">2020 - 2023</div>
+                    <p>웹 및 모바일 UI/UX 디자인 리드</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>UI Designer</h3>
+                    <div class="date">2018 - 2020</div>
+                    <p>스타트업에서 제품 디자인 담당</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Started My Journey</h3>
+                    <div class="date">2017</div>
+                    <p>디자인과 개발의 세계로 첫 발을 내딛다</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 MY BRAND. All rights reserved.</p>
+    </footer>
+
+    <script src="../css/script.js"></script>
+</body>
+</html>
